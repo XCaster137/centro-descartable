@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Centro Descartable — Villa María</title>
+  <meta name="description" content="Vasos, envases, bolsas y química para gastronomía. Mayorista y minorista. Villa María, Córdoba." />
+  <style>
+    :root {
+      --navy: #12324a;
+      --ink: #161616;
+      --muted: #5b5b5b;
+      --line: #e6e2d8;
+      --bg: #f4efe6;
+      --card: #fffcf7;
+      --green: #1f5c49;
+      --wa: #25d366;
+      --accent: #c45c26;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+    a { color: inherit; }
+    .top { background: var(--navy); color: #fff; font-size: 13px; display: flex; justify-content: space-between; gap: 12px; padding: 8px 18px; flex-wrap: wrap; }
+    header { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
+    .brand { font-weight: 800; letter-spacing: .4px; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; gap: 16px; font-size: 14px; }
+    .btn { border: 0; border-radius: 999px; padding: 11px 18px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-dark { background: var(--navy); color: #fff; }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-wa { background: var(--wa); color: #083b1c; }
+    .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; max-width: 1100px; margin: 0 auto; padding: 36px 18px 20px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.05; margin: 10px 0 12px; }
+    .hero p { color: var(--muted); max-width: 460px; }
+    .badge { display: inline-block; border: 1px solid #d7cbb8; border-radius: 999px; padding: 4px 10px; font-size: 12px; color: var(--green); font-weight: 700; }
+    .quote { background: var(--card); border-radius: 18px; padding: 18px; box-shadow: 0 16px 40px rgba(18,50,74,.12); }
+    label { display: block; font-size: 13px; margin: 10px 0 6px; }
+    input, textarea, select { width: 100%; border: 1px solid #ddd4c6; border-radius: 10px; padding: 10px 12px; font: inherit; background: #fff; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    section { max-width: 1100px; margin: 0 auto; padding: 20px 18px 40px; }
+    h2 { text-align: center; margin-bottom: 6px; }
+    .sub { text-align: center; color: var(--muted); margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin-top: 22px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+    .thumb { height: 140px; display: flex; align-items: end; padding: 12px; color: #fff; font-weight: 700; background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(18,50,74,.75)), var(--navy); }
+    .meta { padding: 12px 14px 16px; }
+    .price { font-weight: 800; }
+    .stock { font-size: 12px; color: var(--muted); }
+    .qty { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 10px; }
+    footer { background: var(--navy); color: #d7e4ee; padding: 28px 18px; text-align: center; }
+    .fab { position: fixed; right: 16px; bottom: 16px; background: var(--wa); color: #083b1c; border-radius: 999px; padding: 12px 16px; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(0,0,0,.18); }
+    @media (max-width: 800px) { .hero, .row { display: block; } nav a { display: none; } }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div>+54 9 353 417-7149 · ventas@centrodescartable.com</div>
+    <div>Envíos a todo el país · Mayorista y minorista</div>
+  </div>
+  <header>
+    <div class="brand">CENTRO<span>DESCARTABLE</span></div>
+    <nav>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-dark" href="#contacto">Pedir presupuesto</a>
+  </header>
+  <div class="hero">
+    <div>
+      <div class="badge">SOLUCIONES DE PACKAGING</div>
+      <h1>Todo para tu negocio gastronómico, en un solo lugar.</h1>
+      <p>Vasos, envases, bolsas y química de limpieza para delivery, cafeterías y restaurantes. Stock permanente en Villa María, Córdoba.</p>
+      <p>
+        <a class="btn btn-dark" href="#catalogo">Ver catálogo</a>
+        <a class="btn btn-green" href="#contacto">Atención mayorista</a>
+      </p>
+    </div>
+    <form class="quote" id="quote">
+      <strong>Cotización express</strong>
+      <div class="row">
+        <div>
+          <label>Nombre o negocio</label>
+          <input id="negocio" placeholder="Burger House" required />
+        </div>
+        <div>
+          <label>WhatsApp</label>
+          <input id="tel" placeholder="3534177149" />
+        </div>
+      </div>
+      <label>¿Qué necesitás?</label>
+      <textarea id="detalle" rows="3" placeholder="Cantidades y artículos"></textarea>
+      <p><button class="btn btn-green" type="submit" style="width:100%">Enviar consulta</button></p>
+    </form>
+  </div>
+  <section id="catalogo">
+    <h2>Catálogo de productos</h2>
+    <p class="sub">Líneas pensadas para la operación diaria de un local gastronómico.</p>
+    <p style="text-align:center">
+      <select id="filtro">
+        <option value="all">Todas las líneas</option>
+        <option value="vasos">Vasos</option>
+        <option value="envases">Envases</option>
+        <option value="bolsas">Bolsas</option>
+        <option value="quimica">Química</option>
+      </select>
+    </p>
+    <div class="grid" id="grid"></div>
+  </section>
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p class="sub">Villa María, Córdoba · Lun–Vie 8:30 a 18:00 · Sáb 9:00 a 13:00</p>
+    <p style="text-align:center">
+      <a class="btn btn-wa" id="waCart" href="#">Pedir pedido por WhatsApp</a>
+    </p>
+  </section>
+  <footer>Centro Descartable · Villa María · Link cliente v1 · 24/09/2026</footer>
+  <a class="fab" id="fab" href="#">WhatsApp</a>
+  <script>
+    const WA = "5493534177149";
+    const products = [
+      { id: 1, name: "Vasos de polipapel x 100 u.", category: "vasos", stock: 1200, price: 3800 },
+      { id: 2, name: "Tapas PET para vasos 330 cc", category: "vasos", stock: 2000, price: 2200 },
+      { id: 3, name: "Contenedores hamburgueseros", category: "envases", stock: 450, price: 12500 },
+      { id: 4, name: "Bowls kraft con tapa", category: "envases", stock: 300, price: 8400 },
+      { id: 5, name: "Bandejas de cartón para delivery", category: "envases", stock: 600, price: 5400 },
+      { id: 6, name: "Bolsas de papel kraft con manija", category: "bolsas", stock: 500, price: 9500 },
+      { id: 7, name: "Papel manteca en rollo", category: "bolsas", stock: 180, price: 7200 },
+      { id: 8, name: "Lavandina bidón 5 L — Química Centro", category: "quimica", stock: 400, price: 6800 }
+    ];
+    const qty = {};
+    const ars = n => n.toLocaleString("es-AR", { style: "currency", currency: "ARS", maximumFractionDigits: 0 });
+    const wa = t => `https://wa.me/${WA}?text=${encodeURIComponent(t)}`;
+    function render() {
+      const f = document.getElementById("filtro").value;
+      const grid = document.getElementById("grid");
+      grid.innerHTML = products.filter(p => f === "all" || p.category === f).map(p => `
+        <article class="card">
+          <div class="thumb">${p.category.toUpperCase()}</div>
+          <div class="meta">
+            <div>${p.name}</div>
+            <div class="price">${ars(p.price)}</div>
+            <div class="stock">Stock ${p.stock} u.</div>
+            <div class="qty">
+              <button class="btn" onclick="chg(${p.id},-1)">−</button>
+              <strong id="q${p.id}">${qty[p.id] || 0}</strong>
+              <button class="btn btn-dark" onclick="chg(${p.id},1)">+</button>
+            </div>
+          </div>
+        </article>`).join("");
+    }
+    function chg(id, d) {
+      qty[id] = Math.max(0, (qty[id] || 0) + d);
+      render();
+    }
+    function pedidoTexto() {
+      const lines = products.filter(p => qty[p.id] > 0).map(p => `• ${p.name} x${qty[p.id]} = ${ars(p.price * qty[p.id])}`);
+      const total = products.reduce((s,p) => s + (qty[p.id] || 0) * p.price, 0);
+      return lines.length
+        ? `Hola Centro Descartable, quiero este pedido:\n${lines.join("\n")}\nTotal: ${ars(total)}`
+        : "Hola Centro Descartable, quiero hacer una consulta.";
+    }
+    document.getElementById("filtro").onchange = render;
+    document.getElementById("quote").onsubmit = e => {
+      e.preventDefault();
+      const negocio = document.getElementById("negocio").value;
+      const tel = document.getElementById("tel").value;
+      const detalle = document.getElementById("detalle").value || "consulta general";
+      location.href = wa(`Hola Centro Descartable, soy de "${negocio}" (Tel: ${tel}). Necesito presupuesto para: ${detalle}`);
+    };
+    document.getElementById("waCart").onclick = e => { e.preventDefault(); location.href = wa(pedidoTexto()); };
+    document.getElementById("fab").href = wa("Hola Centro Descartable, quiero hacer una consulta.");
+    render();
+  </script>
+</body>
+</html>
